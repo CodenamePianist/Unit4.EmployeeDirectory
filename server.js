@@ -10,6 +10,13 @@ app.get("/employees", (req, res) => {
   res.json(employees);
 });
 
+app.get("/employees/random", (req, res) => {
+  const randomIndex = Math.floor(Math.random() * employees.length);
+  const randomEmployee = employees[randomIndex];
+
+  res.json(randomEmployee);
+});
+
 app.get("/employees/:id", (req, res) => {
   const { id } = req.params;
 
